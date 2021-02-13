@@ -1,4 +1,4 @@
-import keras
+import kerasb
 
 mnist = tf.keras.datasets.mnist
 
@@ -16,3 +16,7 @@ model = tf.keras.models.Sequential([
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
+
+model.fit(x_train, y_train, epochs=5)
+
+model.evaluate(x_test,  y_test, verbose=2)
