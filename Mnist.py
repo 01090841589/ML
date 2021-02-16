@@ -19,3 +19,9 @@ x_train, x_test = x_train[..., np.newaxis]/255.0, x_test[..., np.newaxis]/255.0
 
 print("Number of original training examples:", len(x_train))
 print("Number of original test examples:", len(x_test))
+
+def filter_36(x, y):
+    keep = (y == 3) | (y == 6)
+    x, y = x[keep], y[keep]
+    y = y == 3
+    return x,y
