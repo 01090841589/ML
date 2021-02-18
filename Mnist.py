@@ -25,3 +25,14 @@ def filter_36(x, y):
     x, y = x[keep], y[keep]
     y = y == 3
     return x,y
+
+x_train, y_train = filter_36(x_train, y_train)
+x_test, y_test = filter_36(x_test, y_test)
+
+print("Number of filtered training examples:", len(x_train))
+print("Number of filtered test examples:", len(x_test))
+
+print(y_train[0])
+
+plt.imshow(x_train[0, :, :, 0])
+plt.colorbar()
