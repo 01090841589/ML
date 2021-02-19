@@ -36,3 +36,33 @@ print(y_train[0])
 
 plt.imshow(x_train[0, :, :, 0])
 plt.colorbar()
+
+
+def remove_contradicting(xs, ys):
+    mapping = collections.defaultdict(set)
+    for x,y in zip(xs,ys):
+       mapping[tuple(x.flatten())].add(y)
+
+    new_x = []
+    new_y = []
+    for x,y in zip(xs, ys):
+      labels = mapping[tuple(x.flatten())]
+      if len(labels) == 1:
+          new_x.append(x)
+          new_y.append(labels.pop())
+      else:
+          pass
+
+    num_3 = sum(1 for value in mapping.values() if True in value)
+    num_6 = sum(1 for value in mapping.values() if False in value)
+    num_both = sum(1 for value in mapping.values() if len(value) == 2)
+
+    print("Number of unique images:", len(mapping.values()))
+    print("Number of 3s: ", num_3)
+    print("Number of 6s: ", num_6)
+    print("Number of contradictory images: ", num_both)
+    print()
+    print("Initial number of examples: ", len(xs))
+    print("Remaining non-contradictory examples: ", len(new_x))
+
+    return np.array(new_x), np.array(new_y)
