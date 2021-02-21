@@ -66,3 +66,10 @@ def remove_contradicting(xs, ys):
     print("Remaining non-contradictory examples: ", len(new_x))
 
     return np.array(new_x), np.array(new_y)
+
+x_train_nocon, y_train_nocon = remove_contradicting(x_train_small, y_train)
+
+THRESHOLD = 0.5
+
+x_train_bin = np.array(x_train_nocon > THRESHOLD, dtype=np.float32)
+x_test_bin = np.array(x_test_small > THRESHOLD, dtype=np.float32)    
