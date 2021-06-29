@@ -13,3 +13,7 @@ pip install matplotlib
 * source ~/anaconda3/etc/profile.d/conda.sh
 
   
+### google colab 연동
+
+pip install google-colab
+pip install google-api-python-client==1.7.3
