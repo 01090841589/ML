@@ -6,7 +6,7 @@ import sympy
 import numpy as np
 import seaborn as sns
 import collections
-
+from PIL import Image
 
 
 %matplotlib inline
@@ -37,6 +37,7 @@ print(y_train[0])
 plt.imshow(x_train[0, :, :, 0])
 plt.colorbar()
 
+im = Image.open('3.png')
 
 def remove_contradicting(xs, ys):
     mapping = collections.defaultdict(set)
