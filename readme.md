@@ -17,3 +17,4 @@ pip install matplotlib
 
 pip install google-colab
 pip install google-api-python-client==1.7.3
+pip install jupyterlab
