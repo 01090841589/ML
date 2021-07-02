@@ -30,3 +30,19 @@ model.compile(optimizer='adam',
 
 model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test,  y_test, verbose=2)
+
+from PIL import Image
+
+im = Image.open('3.png')
+
+print(im.size)
+
+im = np.array(im)
+
+a = model.predict(np.reshape(im, (1, 28, 28)))
+
+print(a)
+
+print(max(a[0]))
+
+print(list(a[0]).index(max(a[0])))
