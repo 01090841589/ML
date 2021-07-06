@@ -46,3 +46,5 @@ print(a)
 print(max(a[0]))
 
 print(list(a[0]).index(max(a[0])))
+
+print("예측된 결과는 {} 입니다".format(list(a[0]).index(max(a[0]))))
