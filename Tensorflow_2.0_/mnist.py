@@ -1,5 +1,5 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-
+# source ~/anaconda3/etc/profile.d/conda.sh
 #!pip install -q tensorflow-gpu==2.0.0-rc1
 import tensorflow as tf
 import matplotlib.pyplot as plt
@@ -34,7 +34,8 @@ model.evaluate(x_test,  y_test, verbose=2)
 from PIL import Image
 
 im = Image.open('3.png')
-
+plt.imshow(im)
+plt.show()
 print(im.size)
 
 im = np.array(im)
