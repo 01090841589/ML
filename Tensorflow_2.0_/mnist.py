@@ -36,6 +36,7 @@ from PIL import Image
 im = Image.open('3.png')
 plt.imshow(im)
 plt.show()
+
 print(im.size)
 
 im = np.array(im)
